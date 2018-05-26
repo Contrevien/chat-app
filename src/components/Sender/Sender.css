@@ -1,0 +1,27 @@
+.Sender{
+  position: relative;
+  max-width: 70%;
+  min-width: 70px; 
+  border-radius: 5px;
+  box-shadow:  5px 5px 20px 3px #ddd;
+  padding: 14px 24px 14px 24px;
+  min-height: 50px;
+  background-image: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  line-height: 150%;
+  word-spacing: 1.2px;
+  font-size: 0.9em;
+  word-wrap: break-word;
+  float: right;
+  clear: both;
+}
+
+.ArrowDown{
+  position: absolute;
+  bottom: -14px;
+  right: 0;
+	width: 0;
+	height: 0;
+	border-top: 18px solid #764ba2;
+	border-left: 18px solid transparent;
+}

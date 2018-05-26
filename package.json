@@ -1,0 +1,22 @@
+{
+  "name": "simple-chat-app",
+  "description": "A very simple chat application for chatting b/w two people only.",
+  "version": "0.0.0",
+  "dependencies": {
+    "firebase": "^4.8.1",
+    "lodash": "4.17.4",
+    "radium": "0.21.0",
+    "react": "16.0.0",
+    "react-dom": "16.0.0",
+    "trim": "0.0.1"
+  },
+  "devDependencies": {
+    "react-scripts": "1.0.0"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  }
+}
