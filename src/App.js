@@ -22,21 +22,25 @@ class App extends React.Component {
   state={
     verfied: false,
     me: '',
-    other: 'Priya',
+    access:'',
+    other: 'Null Zone',
   }
 
-  loginHandler = () => {
+  loginHandler = (username, x) => {
     this.setState({
       verfied: true,
+      me: username,
+      access: x
     })
+    console.log(x);
   }
 
   render() {
 
-    let view = null
+    let view = null;
 
     if(this.state.verfied)
-      view = <Messages db={firebase} me={this.state.me} other={this.state.other} />
+      view = <Messages db={firebase} me={this.state.me} other={this.state.other} access={this.state.access} />
     else
       view = <Login db={firebase} logged={this.loginHandler} />
 

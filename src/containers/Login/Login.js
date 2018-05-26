@@ -13,7 +13,7 @@ class Login extends React.Component {
     password: '',
   }
 
-  onKeyup(e){
+  onKeyup = (e) => {
     if(e.keyCode===13){
       this.handleSubmit()
     }
@@ -27,27 +27,24 @@ class Login extends React.Component {
     })
   }
 
-  login = (username) => {
-    this.props.logged(username);
+  login = (username, x) => {
+    this.props.logged(username, x);
   }
 
   handleSubmit = () => {
-    let username = this.state.username
-    let password = this.state.password
-    let app = this.props.db.database().ref('users');
+    let app = this.props.db.database().ref('key');
     
     app.once('value',(snapshot) => {
-      if (!snapshot.hasChild(username)) {
-        alert("That user does not exists");
+      let value = snapshot.val();
+      if(value===this.state.password){
+        this.login(this.state.username, 'private');
       }
-      else {
-        let value = snapshot.val()
-        
-        if(value[username].toString() === password){
-          this.login(username)
-        } 
+      else{
+        if(this.state.password==='pigsnout'){
+          this.login(this.state.username, 'public');
+        }
         else{
-          alert("Wrong password")
+          alert("Key is not Valid");
         }
       }
     })
@@ -66,9 +63,9 @@ class Login extends React.Component {
     return(
       <div className="LoginPage">
         <div className="Login">
-          <h2 style={{'color':'#222','letterSpacing':'1px'}}>Unlock your world..</h2>
+          <h2 style={{'color':'#222','letterSpacing':'1px'}}>Public Key: "pigsnout"</h2>
           <br/>
-          <input 
+          <input
             name="username"
             value={this.state.username}
             onChange={this.onChangeHandler}
@@ -76,13 +73,14 @@ class Login extends React.Component {
             placeholder="Username"
             className="LoginInput" /><br/>
           <input
+            type="password"
             name="password"
             value={this.state.password}
             onChange={this.onChangeHandler}
             onKeyUp={this.onKeyup}
-            placeholder="Password"
+            placeholder="Key"
             className="LoginInput" /><br />
-          <button className="LoginBtn" onClick={this.handleSubmit} onKeyUp></button>
+          <button className="LoginBtn" onClick={this.handleSubmit} onKeyUp={this.onKeyup}></button>
         </div>
       </div>
     )

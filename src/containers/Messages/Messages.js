@@ -67,6 +67,7 @@ class Messages extends React.Component {
         );
       }
     };
+
     return (
       <div className="Messages">
         <Name name={this.props.other} />
@@ -74,7 +75,9 @@ class Messages extends React.Component {
         <div style={{ height: "50px", float: "left", clear: "both" }}
           ref={(el) => { this.messagesEnd = el; }}>
         </div>
-        <TextBox db={this.props.db} me={this.props.me} />
+        { 
+          this.props.access==="private"?<TextBox db={this.props.db} me={this.props.me} />:null
+        }
       </div>
     );
   }

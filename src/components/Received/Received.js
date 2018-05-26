@@ -7,7 +7,7 @@ let styles={
   'boxShadow': '5px 5px 20px 3px #ddd',
   'maxWidth': '70%',
   'minWidth': '70px',
-  'padding': '0px 24px 14px 24px',
+  'padding': '14px 20px 14px 20px',
   'wordWrap': 'break-word',
   'lineHeight': '150%',
   'fontSize': '0.9em',
@@ -20,7 +20,7 @@ const received = (props) => {
  
   return(
     <div style={styles}>
-      <h4>{props.by}</h4> 
+      <h4 style={{ 'marginBottom':'7px' }}>{props.by}</h4> 
       <p>{props.message}</p>
     </div>
   )

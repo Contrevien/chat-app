@@ -3,12 +3,15 @@ import React from 'react'
 const styles = {
   'position':'fixed',
   'width':'100%',
-  'height':'70px',
-  'textAlign':'center',
+  'height':'55px',
+  'display':'flex',
+  'alignItems':'center',
+  'justifyContent':'center',
   'zIndex':'500',
-  'letterSpacing': '0.7px',
+  'letterSpacing': '1px',
+  'boxShadow':'0 4px 8px 0 rgba(0,0,0,0.2)',
   'backgroundColor':'white',
-  'paddingTop':'30px',
+  'fontWeight':'bold',
 }
 
 const name = (props) => {

@@ -5,7 +5,7 @@ import './Sender.css'
 const sender = (props) => {
   
   let senderMargin = {
-    'margin': '25px 5% -10px 0'
+    'margin': '25px 5% -10px 0',
   }
 
 

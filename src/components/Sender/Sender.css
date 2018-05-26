@@ -2,10 +2,11 @@
   position: relative;
   max-width: 70%;
   min-width: 70px; 
-  border-radius: 5px;
+  border-radius: 3px;
   box-shadow:  5px 5px 20px 3px #ddd;
-  padding: 14px 24px 14px 24px;
-  min-height: 50px;
+  padding: 10px 15px;
+  display: flex;
+  align-items: center;
   background-image: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
   color: white;
   line-height: 150%;
@@ -18,10 +19,10 @@
 
 .ArrowDown{
   position: absolute;
-  bottom: -14px;
+  bottom: -5px;
   right: 0;
 	width: 0;
 	height: 0;
-	border-top: 18px solid #764ba2;
-	border-left: 18px solid transparent;
+	border-top: 9px solid #764ba2;
+	border-left: 9px solid transparent;
 }
